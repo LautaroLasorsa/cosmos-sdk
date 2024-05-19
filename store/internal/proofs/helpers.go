@@ -94,7 +94,7 @@ func BuildMap(size int) map[string][]byte {
 	data := make(map[string][]byte)
 	// insert lots of info and store the bytes
 	for i := 0; i < size; i++ {
-		key := unsafe.Str(20)
+		key := unsafe.Str(100)
 		data[key] = toValue(key)
 	}
 	return data

@@ -1,6 +1,7 @@
 package proofs
 
 import (
+	"encoding/hex"
 	"errors"
 	"testing"
 
@@ -52,6 +53,11 @@ func TestCreateMembership(t *testing.T) {
 			if !valid {
 				t.Fatalf("Membership Proof Invalid")
 			}
+			marshal, _ := proof.Marshal()
+			t.Logf("Membership Proof: %+v", hex.EncodeToString(marshal))
+			t.Logf("key : %v", hex.EncodeToString([]byte(key)))
+			t.Logf("root : %v", hex.EncodeToString(root))
+			t.Logf("val : %+v", hex.EncodeToString(val))
 		})
 	}
 }
